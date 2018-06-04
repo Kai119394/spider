@@ -16,6 +16,7 @@ make && make install
 sudo apt-get update
 sudo apt-get install redis-server
 ```
+
 ####配置文件
 将redis-3.2.11目录下的redis.conf配置文件复制到用户主目录下并修改配置文件（如果你对配置文件不是很有把握就不要直接修改而是先复制一份再修改这个副本）
 ```
@@ -23,26 +24,38 @@ cd ..
 cp redis-3.2.11/redis.conf redis.conf
 vim redis.conf
 ```
+
 绑定指定的IP和端口
+
 ![这里写图片描述](https://img-blog.csdn.net/2018053020160397?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTc4MjA1MA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 ![这里写图片描述](https://img-blog.csdn.net/20180530202035260?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTc4MjA1MA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
 配置Redis的持久化机制 - RDB
+
 ![这里写图片描述](https://img-blog.csdn.net/20180530202411490?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTc4MjA1MA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
 配置Redis的持久化机制 - AOF
+
 ![这里写图片描述](https://img-blog.csdn.net/20180530202447413?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTc4MjA1MA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
 配置访问Redis服务器的验证口令
+
 ![这里写图片描述](https://img-blog.csdn.net/20180530202734818?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTc4MjA1MA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
 这样我们就完成了Redis的基本配置。
+
 ####启动redis
 ```
 redis-server redis.conf $ # 后台运行
 ```
+
 ####连接服务器
 ```
 redis-cli -h <内网(私网)IP> -p <端口号>
 
 auth <密码>
 ```
+
 ####redis的相关操作
 主从复制
 
